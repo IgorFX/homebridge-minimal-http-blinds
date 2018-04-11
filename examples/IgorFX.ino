@@ -63,11 +63,9 @@ digitalWrite(LED_BUILTIN, HIGH);
 
 WiFi.mode(WIFI_STA);
 WiFi.begin(ssid, password); // Connect to WiFi
-// Serial.println("");
 while (WiFi.status() != WL_CONNECTED) // Waiting connect
 {
 delay(250);
-// Serial.print(".");
 }
 
 ArduinoOTA.setPort(8267); // Port OTA
@@ -91,9 +89,6 @@ else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
 else if (error == OTA_END_ERROR) Serial.println("End Failed"); 
 });
 ArduinoOTA.begin();
-//Serial.println("Ready");
-//Serial.print("IP address: ");
-//Serial.println(WiFi.localIP());
 blink();
 blink();
 
@@ -105,7 +100,6 @@ server.on("/", HTTP_GET, handleRoot); // Hellow World)
 server.on("/set", HTTP_POST, handleLogin); //Position from Homebridge
 server.onNotFound(handleNotFound); //Wrong request
 server.begin();
-//Serial.println("HTTP server started");
 }
 
 void loop(void)
@@ -155,7 +149,6 @@ if ( persent >= 0 && persent <= 100 )
 w_state = 2;
 stepper.moveTo(persent * 192);
 stepper.run();
-// Serial.print("Position :" + pers);
 server.send(204, "text/plain", server.arg("set"));
 }
 else
@@ -180,9 +173,7 @@ w_state = 1;
 if (pers != "0" && pers != "100") {
 w_state = 2;
 }
-//String respMsg = "State is Closing \n";
 server.send(200, "text/plain", String(w_state)); // Current state "0" close, "1" open, "2" idle
-//Serial.println(w_state);
 }
 void handleNotFound()
 {
