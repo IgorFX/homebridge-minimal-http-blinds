@@ -156,7 +156,7 @@ w_state = 2;
 stepper.moveTo(persent * 192);
 stepper.run();
 // Serial.print("Position :" + pers);
-server.send(204, "text/plain", server.arg("set"));
+server.send(204, "text/plain");
 }
 else
 {
