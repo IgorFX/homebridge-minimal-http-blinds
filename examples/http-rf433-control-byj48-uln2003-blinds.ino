@@ -1,4 +1,20 @@
-/* config.json file for homebridge-minimal-http-blinds
+/* Arduino Sketch for WiFi RF433 blinds controller v.1
+
+Parts :
+1. Wemos D1 Mini;
+2. RF433 Reciever;
+3. byj28-48 stepper motor(unipolar);
+4. ULN2003 motor driver;
+5. 2 buttons remote (open/slose);
+6. Step Up DC Booster
+7. 4 Chargin modules TP5056
+8. 4 18650 Battery holders
+9. 4 Li-Ion 18650 2600mAh battery
+10. 8 Solar panels 110x60 mm ~6V ~150mA
+11. PCB 
+
+config.json file for Nicnl homebridge-minimal-http-blinds plugin 
+https://github.com/Nicnl/homebridge-minimal-http-blinds
 
 "get_current_position_url": "http://192.168.0.100/position",
 "set_target_position_url": "http://192.168.0.100/set?persent=%position%",
