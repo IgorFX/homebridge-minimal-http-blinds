@@ -177,7 +177,7 @@ server.send(401, "text/plain", "401: Wrong Position");
 void handlePosition()
 {
 stepper.run();
-server.send(200, "text/plain", String(persents)); //Current position 0 - 100
+server.send(200, "text/plain", persent); //Current position 0 - 100
 }
 void handleState()
 {
