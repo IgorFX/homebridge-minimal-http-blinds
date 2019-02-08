@@ -1,3 +1,9 @@
+/* config.json
+"get_current_position_url": "http://192.168.0.100/position",
+"set_target_position_url": "http://192.168.0.100/set?pers=%position%",
+"get_current_state_url": "http://192.168.0.100/state"
+*/
+
 #include <ESP8266WiFi.h> 
 #include <ESP8266WebServer.h>
 #include <AccelStepper.h> //Stepper motor super library :p
@@ -156,7 +162,7 @@ w_state = 2;
 stepper.moveTo(persent * 192);
 stepper.run();
 // Serial.print("Position :" + pers);
-server.send(204, "text/plain", server.arg("set"));
+server.send(204, "text/plain");
 }
 else
 {
